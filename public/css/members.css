@@ -1,0 +1,214 @@
+.hero {
+  width: 100%;
+  padding-top: 18vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 7.7vh;
+}
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 60%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 4.5vh;
+  font-family: bold;
+  letter-spacing: 1px;
+  margin-bottom: 4vh;
+}
+.hero h3 {
+  font-weight: 100;
+  font-family: light;
+  line-height: 4.5vh;
+  letter-spacing: 0.5px;
+  font-size: 2.05vh;
+}
+/* MEMBERS */
+.big {
+  margin-top: 5vh;
+  width: 100%;
+  padding: 0 28vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.bigCard {
+  width: 50%;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bigCard img {
+  width: 22.5vh;
+  height: 22.5vh;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2.2vh;
+}
+.bigCard h2 {
+  font-size: 2.5vh;
+  text-align: center;
+}
+.bigCard h3 {
+  font-family: light;
+  font-size: 2.2vh;
+  margin-top: 1vh;
+}
+.social {
+  margin-top: 1.3vh;
+  font-size: 3vh;
+}
+.social i {
+  margin: 0vh 0.5vw;
+}
+
+.cards {
+  margin-top: 3vh;
+  margin-bottom: 6vh;
+  width: 100%;
+  display: flex;
+  padding: 0 18vw;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  width: 30%;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card img {
+  width: 22.5vh;
+  height: 22.5vh;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 3vh;
+}
+.card h2 {
+  font-size: 2.4vh;
+  text-align: center;
+  padding: 1.2vh 0;
+}
+.card h3 {
+  font-family: light;
+  font-size: 2.2vh;
+  padding: 0;
+}
+/* INPUT */
+.input {
+  display: flex;
+  width: 20vw;
+  margin-top: 6vh;
+  border: 1px var(--white) solid;
+  border-radius: 5px;
+  position: relative;
+}
+#searchBar {
+  background: transparent;
+  width: 80%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  padding: 1.8vh 1.6vw;
+  transition: all 0.3s;
+  font-size: 1.8vh;
+  font-family: light;
+}
+#searchBar::placeholder {
+  color: var(--white);
+  font-family: light;
+}
+.input button {
+  background: transparent;
+  cursor: pointer;
+  width: 20%;
+  font-size: 2.4vh;
+  padding: 1vh 1.3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-family: light;
+}
+/* MEDIAS */
+@media (max-width: 1300px) {
+  .hero {
+    padding-top: 10vh;
+    padding: 6vh 0;
+  }
+  .heroContent {
+    width: 55%;
+  }
+}
+@media (max-width: 1100px) {
+  .big {
+    padding: 0 10vw;
+  }
+  .card {
+    width: 45%;
+  }
+  .input {
+    width: 44vw;
+  }
+  #searchBar {
+    padding: 1.8vh 3vw;
+  }
+}
+@media (max-width: 860px) {
+  .input {
+    width: 50vw;
+  }
+  #searchBar {
+    padding: 1.8vh 4vw;
+  }
+}
+@media (max-width: 800px) {
+  .big,
+  .cards {
+    padding: 0 5vw;
+  }
+  .heroContent {
+    width: 70%;
+  }
+  .hero h1 {
+    font-size: 4vh;
+  }
+}
+@media (max-width: 470px) {
+  .heroContent {
+    width: 100%;
+  }
+  .big,
+  .cards {
+    padding: 0 3vw;
+  }
+  .bigCard,
+  .card {
+    width: 100%;
+  }
+  .input {
+    width: 70vw;
+  }
+  #searchBar {
+    padding: 1.8vh 5vw;
+  }
+}
+@media (max-width: 350px) {
+  .hero h1 {
+    font-size: 5vh;
+  }
+  .hero h3 {
+    font-size: 2.4vh;
+  }
+}

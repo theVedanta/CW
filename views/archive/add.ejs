@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW - Admin - Add Archive</title>
+</head>
+<body>
+    <h1>Add Archive</h1>
+    <form action="/admin/archives/add" enctype="multipart/form-data" method="POST">
+        <input type="text" name='title' required placeholder="Project Title">
+        <input type="text" name='link' required placeholder="Project Link">
+        <input type="text" name='event' required placeholder="Event (eg. Web Dev, etc.)">
+        <input type="number" name='year' required placeholder="Year">
+        <select name="competition">
+            <option value="">None</option>
+            <option value="Exun 2020">Exun 2020</option>
+            <option value="Minet 2020">Minet 2020</option>
+        </select>
+        <select name="category">
+            <option value="Creative Work">Creative Work</option>
+            <option value="Creative Prompts">Creative Prompts</option>
+            <option value="Quizzes">Quizzes</option>
+            <option value="Crossword">Crossword</option>
+            <option value="Techathlon">Techathlon</option>
+        </select>
+        <input required type="file" accept="image/*" name="img">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

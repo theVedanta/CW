@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW - Admin - Edit Archive</title>
+</head>
+<body>
+    <h1>Edit Archive</h1>
+    <form action="/admin/archives/edit/<%= archive._id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+        <input type="text" name='title' required value="<%= archive.title %>">
+        <input type="text" name='link' required value="<%= archive.link %>">
+        <input type="text" name='event' required value="<%= archive.event %>">
+        <input type="number" name='year' required value="<%= archive.year %>">
+
+        <select name="competition">
+            <option value="<%= archive.competition %>"><%= archive.competition %></option>
+            <option value="">None</option>
+            <option value="Exun 2020">Exun 2020</option>
+            <option value="Minet 2020">Minet 2020</option>
+        </select>
+
+        <select name="category">
+            <option value="<%= archive.category %>"><%= archive.category %></option>
+            <option value="Creative Work">Creative Work</option>
+            <option value="Creative Prompts">Creative Prompts</option>
+            <option value="Quizzes">Quizzes</option>
+            <option value="Crossword">Crossword</option>
+            <option value="Techathlon">Techathlon</option>
+        </select>
+        <input type="file" name="img" accept="image/*">
+        <button type="submit">Submit</button>
+    </form>
+    <img width="400px" src="/img/<%= archive.image %>" alt="some">
+</body>
+</html>
