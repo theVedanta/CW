@@ -25,58 +25,26 @@
 .hero h3 {
   font-weight: 100;
   font-family: light;
-  line-height: 4.5vh;
+  line-height: var(--lh);
   letter-spacing: 0.5px;
-  font-size: 2.05vh;
+  font-size: var(--text);
 }
 /* MEMBERS */
-.big {
-  margin-top: 5vh;
-  width: 100%;
-  padding: 0 28vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-.bigCard {
-  width: 50%;
-  margin-bottom: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.bigCard img {
-  width: 22.5vh;
-  height: 22.5vh;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 2.2vh;
-}
-.bigCard h2 {
-  font-size: 2.5vh;
-  text-align: center;
-}
-.bigCard h3 {
-  font-family: light;
-  font-size: 2.2vh;
-  margin-top: 1vh;
-}
 .social {
   margin-top: 1.3vh;
   font-size: 3vh;
+  display: flex;
+  justify-content: center;
 }
 .social i {
   margin: 0vh 0.5vw;
 }
-
 .cards {
   margin-top: 3vh;
   margin-bottom: 6vh;
   width: 100%;
   display: flex;
-  padding: 0 18vw;
+  padding: 0 16vw;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -88,10 +56,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.card img {
-  width: 22.5vh;
-  height: 22.5vh;
+.cardImg {
+  width: 24.5vh;
+  height: 24.5vh;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 3vh;
@@ -99,6 +68,7 @@
 .card h2 {
   font-size: 2.4vh;
   text-align: center;
+  font-family: med;
   padding: 1.2vh 0;
 }
 .card h3 {
@@ -106,14 +76,30 @@
   font-size: 2.2vh;
   padding: 0;
 }
+.social i {
+  margin: 0 0.5vw;
+}
+.bigC {
+  width: 50%;
+}
+.big {
+  margin: 3vh 0;
+  width: 100%;
+  display: flex;
+  padding: 0 10vw;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
 /* INPUT */
 .input {
   display: flex;
   width: 20vw;
   margin-top: 6vh;
-  border: 1px var(--white) solid;
+  border: 1px var(--borderWhite) solid;
   border-radius: 5px;
   position: relative;
+  transition: all 0.3s;
 }
 #searchBar {
   background: transparent;
@@ -141,6 +127,9 @@
   border: none;
   font-family: light;
 }
+.input img {
+  width: 100%;
+}
 /* MEDIAS */
 @media (max-width: 1300px) {
   .hero {
@@ -150,31 +139,39 @@
   .heroContent {
     width: 55%;
   }
+  .cards {
+    padding: 0 12vw;
+  }
 }
 @media (max-width: 1100px) {
   .big {
-    padding: 0 10vw;
+    padding: 0;
+    margin-bottom: 0;
   }
   .card {
     width: 45%;
   }
+  .cardImg {
+    width: 20vh;
+    height: 20vh;
+  }
   .input {
     width: 44vw;
+  }
+  .input img {
+    width: 40%;
   }
   #searchBar {
     padding: 1.8vh 3vw;
   }
-}
-@media (max-width: 860px) {
-  .input {
-    width: 50vw;
+  .social {
+    font-size: 2vh;
   }
-  #searchBar {
-    padding: 1.8vh 4vw;
+  .social i {
+    margin: 0 0.8vw;
   }
 }
-@media (max-width: 800px) {
-  .big,
+@media (max-width: 900px) {
   .cards {
     padding: 0 5vw;
   }
@@ -185,15 +182,21 @@
     font-size: 4vh;
   }
 }
-@media (max-width: 470px) {
+@media (max-width: 860px) {
+  .input {
+    width: 50vw;
+  }
+  #searchBar {
+    padding: 1.8vh 4vw;
+  }
+}
+@media (max-width: 570px) {
   .heroContent {
     width: 100%;
   }
-  .big,
   .cards {
     padding: 0 3vw;
   }
-  .bigCard,
   .card {
     width: 100%;
   }
@@ -203,12 +206,21 @@
   #searchBar {
     padding: 1.8vh 5vw;
   }
+  .social i {
+    margin: 0 2.5vw;
+  }
+  .social {
+    font-size: 2.6vh;
+  }
 }
 @media (max-width: 350px) {
   .hero h1 {
     font-size: 5vh;
   }
-  .hero h3 {
-    font-size: 2.4vh;
-  }
+}
+.light h3,
+.light p,
+.light .btn,
+.light {
+  font-family: reg;
 }

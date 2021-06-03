@@ -10,9 +10,13 @@ for (let card of cards) {
 };
 
 search.addEventListener("keyup", e => {
+    document.querySelector(".cards").style.paddingTop = "10vh";
+    document.querySelector(".cards").style.paddingBottom = "10vh";
     let usrInp = search.value.trim();
     let matches = getMatches(usrInp);
     if (usrInp == "") {
+        document.querySelector(".cards").style.paddingTop = "0";
+        document.querySelector(".cards").style.paddingBottom = "0";
         for (let card of cards) {
             card.style.display = "flex";
         };
@@ -24,6 +28,8 @@ search.addEventListener("keyup", e => {
     for (let match of matches) {
         for (let title of titles) {
             if (match == title) {
+                document.querySelector(".cards").style.paddingTop = "0";
+                document.querySelector(".cards").style.paddingBottom = "0";
                 for (let card of cards) {
                     if (card.children[1].textContent.toLowerCase() == title) {
                         card.style.display = "flex";

@@ -1,7 +1,12 @@
-/* Hero ------------------------------------------- */
+.hero h3,
+.write p,
+.soBig p {
+  font-family: light;
+  line-height: var(--lh);
+}
 .hero {
   width: 100%;
-  height: 75vh;
+  padding: 18vh 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,27 +17,29 @@
   display: flex;
   flex-direction: column;
   width: 40%;
-  min-height: 53%;
+  height: 90%;
   justify-content: space-between;
   align-items: center;
   text-align: center;
 }
 .hero h1 {
   font-size: 5vh;
-  min-height: 15vh;
+  font-family: bold;
+  margin-bottom: 2vh;
+  width: 110%;
+  height: 14vh;
+}
+.hero h3 {
+  font-weight: 100;
+  font-family: light;
+  letter-spacing: 0.5px;
+  font-size: var(--text);
 }
 #title {
   font-family: bold;
 }
-.hero h3 {
-  font-weight: 100;
-  font-size: 2vh;
-  font-family: light;
-  line-height: 4vh;
-  margin-top: 3vh;
-}
 .hero .btn {
-  margin-top: 5vh;
+  margin-top: 3.8vh;
 }
 /* Video ---------------------------------------- */
 .vid {
@@ -117,14 +124,13 @@
 .write h1 {
   font-family: bold;
   font-size: 5vh;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
 }
 .write p {
-  line-height: 4vh;
   font-family: light;
   margin: 2vh 0;
-  font-size: 2vh;
-  padding-right: 8vw;
+  font-size: var(--text);
+  padding-right: 2vw;
 }
 .writeRight {
   display: flex;
@@ -136,7 +142,7 @@
   justify-content: flex-start;
 }
 #p2 {
-  padding-left: 8vw;
+  padding-left: 2vw;
   padding-right: 0;
 }
 .mainImg {
@@ -180,6 +186,9 @@
   justify-content: flex-end;
   align-items: center;
 }
+#discW iframe {
+  width: 100%;
+}
 /* soBig ------------------------------------------- */
 .soBig {
   background: var(--sBlack);
@@ -207,40 +216,114 @@
 }
 .soBig p {
   padding: 0 12vw;
-  line-height: 4vh;
-  font-size: 2vh;
+  font-size: var(--text);
 }
 .soBig a {
   margin-top: 4vh;
   width: 18%;
 }
+/* FAQ */
+.faq {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.faq h1 {
+  font-size: 5vh;
+  font-family: bold;
+  position: relative;
+}
+.faq h1::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 5%;
+  width: 75%;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--unit);
+}
+.units {
+  width: 100%;
+  margin-top: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.unit {
+  width: 100%;
+  background: var(--unit);
+  padding: 1.2vh 3.4vw;
+  font-size: 1.8vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2vh;
+  line-height: 4.2vh;
+}
+.unitTop {
+  font-family: med;
+  padding: 2vh 0;
+  position: relative;
+}
+.unitTop::before {
+  content: "Q.";
+  position: absolute;
+  left: -2.4%;
+}
+.unitTop i {
+  position: absolute;
+  right: 0;
+  top: 2vh;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 2.4vh;
+  transition: all 0.4s;
+}
+.unitBot {
+  font-family: light;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease, opacity 0.2s;
+}
+.unitActive .unitBot {
+  max-height: 500px;
+  padding-bottom: 1vh;
+  opacity: 1;
+}
+.unitActive i {
+  transform: rotate(180deg);
+}
+
 /* MEDIAS */
 @media (max-width: 1400px) {
-  .hero h3 {
-    font-size: 1.9vh;
+  .heroContent {
+    width: 50%;
+    padding: 0 5vw;
   }
-  .write p {
-    font-size: 1.9vh;
-  }
-  .soBig p {
-    font-size: 1.9vh;
+  .soBig a {
+    width: 20%;
   }
 }
 @media (max-width: 1200px) {
   .heroContent {
-    width: 55%;
+    width: 68%;
+    padding: 0;
+    height: 65%;
   }
   .hero {
     height: 80vh;
     margin-bottom: 0;
+    padding: 7vh 0;
   }
   .hero h3 {
-    line-height: 3vh;
-    font-size: 2vh;
     margin-top: 1.5vh;
   }
   .hero .btn {
-    margin-top: 1.5vh;
+    margin-top: 5vh;
   }
   .vid {
     height: 50vh;
@@ -250,9 +333,7 @@
     font-size: 3vh;
   }
   .write p {
-    line-height: 2.4vh;
     padding-right: 2vw;
-    font-size: 2vh;
   }
   .write a {
     width: 60%;
@@ -262,33 +343,48 @@
   }
   .soBig p {
     padding: 0 5vw;
-    font-size: 2vh;
-    line-height: 3.4vh;
+  }
+  .write a {
+    padding: 2vh 0;
+    width: 50%;
   }
   .soBig a {
-    width: 30%;
+    width: 25%;
+    padding: 2vh;
+  }
+  .unit {
+    padding: 1vh 6vw;
+    font-size: 1.6vh;
+    line-height: 3.4vh;
+  }
+  .unitTop::before {
+    left: -4%;
   }
 }
 @media (max-width: 800px) {
   .heroContent {
     width: 90%;
+    padding: 0;
+    height: 55%;
   }
   .hero .btn {
+    margin-top: 5vh;
     padding: 2vh 8vw;
   }
   .hero h1 {
     font-size: 4vh;
-  }
-  .hero .btn {
-    margin-top: 1vh;
+    width: 80%;
+    min-height: 6vh;
+    margin-bottom: 6vh;
   }
   .hero h3 {
     margin-top: 1vh;
     padding: 0 8vw;
-    font-size: 1.8vh;
   }
   .hero {
     height: 65vh;
+    padding-top: 5vh;
+    margin-bottom: 13vh;
   }
   .vid {
     height: 35vh;
@@ -301,10 +397,6 @@
   }
   .write p {
     padding: 0;
-    font-size: 1.4vh;
-  }
-  .soBig p {
-    font-size: 1.4vh;
   }
   .mainImg {
     width: 90%;
@@ -318,20 +410,23 @@
   nav {
     padding: 3vh 4vw;
   }
+  .hero {
+    padding-bottom: 7vh;
+    margin: 0;
+  }
   .heroContent {
     width: 100%;
-    min-height: 60%;
+    height: 70%;
     justify-content: space-around;
   }
-  .hero {
-    height: 69vh;
+  .hero h1 {
+    font-size: 3.3vh;
+    min-height: 8vh;
   }
   .hero h3 {
     margin-top: 1vh;
-    font-size: 2vh;
     padding-left: 2vw;
     padding-right: 2vw;
-    line-height: 4vh;
   }
   .hero .btn {
     margin-top: 5vh;
@@ -393,9 +488,7 @@
     margin: 5vh 0;
   }
   .write p {
-    font-size: 2vh;
     margin: 4vh 0;
-    line-height: 5vh;
   }
   #p2 {
     padding: 0;
@@ -407,12 +500,6 @@
   #discW h1 {
     margin: 0;
     margin-bottom: 2vh;
-  }
-  #discW p {
-    margin: 0;
-    font-size: 1.8vh;
-    line-height: 5vh;
-    margin: 2vh 0;
   }
   #discW .btn {
     width: 60%;
@@ -434,7 +521,6 @@
   }
   .soBig p {
     padding: 0 2vw;
-    font-size: 2vh;
   }
   .soBig .btn {
     width: 50%;
@@ -446,7 +532,25 @@
     width: 55%;
   }
   #cursor {
-    height: 40px;
+    height: 28px;
+  }
+  .unit {
+    padding: 0.4vh 10vw;
+    font-size: 1.7vh;
+    line-height: 3vh;
+  }
+  .unitTop::before {
+    left: -8%;
+  }
+  .unitTop {
+    padding-right: 6.4%;
+  }
+  .unitBot {
+    padding-right: 0;
+  }
+  .unitTop i {
+    right: -6%;
+    font-size: 2vh;
   }
 }
 @media (max-height: 850px) {
@@ -454,4 +558,10 @@
   .lD {
     height: 170%;
   }
+}
+.light h3,
+.light p,
+.light .btn,
+.light {
+  font-family: reg;
 }
